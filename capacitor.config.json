@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "cursoreact",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

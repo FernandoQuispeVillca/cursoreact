@@ -69,3 +69,21 @@ http://ionicframework.com/docs/theming/ */
     --ion-color-light-shade: #d7d8da;
     --ion-color-light-tint: #f5f6f9;
 }
+
+.table ion-row {
+    padding: 10px 5px;
+    font-size: 16px;
+}
+
+.table ion-row:nth-child(even) {
+    background: #efefef;
+}
+
+.table ion-row:nth-child(odd) {
+    background: #FFF
+}
+
+.table ion-row:first-child {
+    font-weight: bold;
+    text-transform: uppercase;
+}

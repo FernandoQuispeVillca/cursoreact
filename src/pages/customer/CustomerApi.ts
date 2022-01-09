@@ -16,7 +16,15 @@ export function removeCustomer(id: string){
 
 export function saveCustomer(customer: any){
     let customers = searchCustomer();
-    customers.push(customer);
+    if(customer.id){
+     //editar
+     let indice = customers.findIndex((c:any) => c.id == customer.id);
+     customers[indice] = customer;
+    }else{
+     //nuevo
+     customer.id = Math.round(Math.random() * 100000) ;  
+     customers.push(customer);
+    }
     localStorage['customers'] = JSON.stringify(customers);
 }
 

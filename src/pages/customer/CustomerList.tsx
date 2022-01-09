@@ -14,7 +14,7 @@ const CustomerList: React.FC = () => {
 
   useEffect(() => {
      search();
-  }, []);
+  }, [history.location.pathname]);
 
   const search = () => {
      let result = searchCustomer();

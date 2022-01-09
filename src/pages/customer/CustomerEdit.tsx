@@ -24,12 +24,9 @@ const CustomerEdit: React.FC = () => {
             let result = searchCustomerById(id);
             setCustomer(result);
         }
-        //  let result = searchCustomer();
-        //  setClientes(result);
     }
 
     const save = () => {
-        customer.id = Math.round(Math.random() * 100000) ;  
         saveCustomer(customer);
         history.push('/page/customers');
     }

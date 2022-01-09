@@ -19,3 +19,8 @@ export function saveCustomer(customer: any){
     customers.push(customer);
     localStorage['customers'] = JSON.stringify(customers);
 }
+
+export function searchCustomerById(id: string){
+    let customers = searchCustomer();
+    return customers.find((customer:any) => customer.id == id);
+}

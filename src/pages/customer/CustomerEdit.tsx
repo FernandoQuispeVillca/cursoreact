@@ -3,7 +3,7 @@ import { add, checkmark, close, pencil } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import ExploreContainer from '../../components/ExploreContainer';
-import { removeCustomer, saveCustomer, searchCustomer } from './CustomerApi';
+import { removeCustomer, saveCustomer, searchCustomer, searchCustomerById } from './CustomerApi';
 // import './CustomerList.css';
 
 const CustomerEdit: React.FC = () => {
@@ -20,6 +20,10 @@ const CustomerEdit: React.FC = () => {
     }, []);
 
     const search = () => {
+        if(id !== 'new'){
+            let result = searchCustomerById(id);
+            setCustomer(result);
+        }
         //  let result = searchCustomer();
         //  setClientes(result);
     }

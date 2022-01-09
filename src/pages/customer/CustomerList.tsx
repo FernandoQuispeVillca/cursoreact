@@ -1,7 +1,7 @@
 import { IonButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import { add, close, pencil } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import ExploreContainer from '../../components/ExploreContainer';
 import { removeCustomer, saveCustomer, searchCustomer } from './CustomerApi';
 // import './CustomerList.css';
@@ -9,9 +9,8 @@ import { removeCustomer, saveCustomer, searchCustomer } from './CustomerApi';
 const CustomerList: React.FC = () => {
 
   const { name } = useParams<{ name: string; }>();
-  
   const  [clientes, setClientes] = useState<any>([]);
-
+  const history = useHistory();
 
   useEffect(() => {
      search();
@@ -39,6 +38,10 @@ const CustomerList: React.FC = () => {
     saveCustomer(ejemplo);
   }
 
+  const addCustomer = () => {
+     history.push('/page/customer/new');
+  }
+
   return (
     <IonPage>
       <IonHeader>
@@ -60,7 +63,7 @@ const CustomerList: React.FC = () => {
         <IonCard>
           <IonTitle>Gestión de Clientes</IonTitle>
           <IonItem>
-            <IonButton color="primary" fill="solid" slot="end" size="default">
+            <IonButton onClick={addCustomer} color="primary" fill="solid" slot="end" size="default">
               <IonIcon icon={add} />
               Agregar Cliente
             </IonButton>

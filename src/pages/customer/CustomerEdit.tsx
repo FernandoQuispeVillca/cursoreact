@@ -3,6 +3,7 @@ import { add, checkmark, close, pencil } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import ExploreContainer from '../../components/ExploreContainer';
+import Customer from './Customer';
 import { removeCustomer, saveCustomer, searchCustomer, searchCustomerById } from './CustomerApi';
 // import './CustomerList.css';
 
@@ -10,7 +11,7 @@ const CustomerEdit: React.FC = () => {
 
     const { name, id } = useParams<{ name: string; id: string }>();
 
-    const [customer, setCustomer] = useState<any>({});
+    const [customer, setCustomer] = useState<Customer>({});
 
     const history = useHistory();
 
@@ -56,14 +57,14 @@ const CustomerEdit: React.FC = () => {
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Nombre:</IonLabel>
-                                    <IonInput  onIonChange = {e => customer.firstname = e.detail.value}
+                                    <IonInput  onIonChange = {e => customer.firstname = String(e.detail.value)}
                                     value={customer.firstname}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Apellido:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.lastname = e.detail.value} 
+                                    <IonInput onIonChange = {e => customer.lastname = String(e.detail.value)} 
                                     value={customer.lastname}></IonInput>
                                 </IonItem>
                             </IonCol>
@@ -72,14 +73,14 @@ const CustomerEdit: React.FC = () => {
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Email:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.email = e.detail.value}
+                                    <IonInput onIonChange = {e => customer.email = String(e.detail.value)}
                                      value={customer.email}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Dirección:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.address = e.detail.value}
+                                    <IonInput onIonChange = {e => customer.address = String(e.detail.value)}
                                      value={customer.address}></IonInput>
                                 </IonItem>
                             </IonCol>
@@ -88,7 +89,7 @@ const CustomerEdit: React.FC = () => {
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Teléfono:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.phone = e.detail.value} 
+                                    <IonInput onIonChange = {e => customer.phone = String(e.detail.value)} 
                                     value={customer.phone}></IonInput>
                                 </IonItem>
                             </IonCol>

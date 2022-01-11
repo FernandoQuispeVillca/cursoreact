@@ -33,6 +33,12 @@ const appPages: AppPage[] = [
     url: '/page/employees',
     iosIcon: peopleOutline,
     mdIcon: people
+  },
+  {
+    title: 'Proveedores',
+    url: '/page/vendors',
+    iosIcon: peopleOutline,
+    mdIcon: people
   }
 ];
 

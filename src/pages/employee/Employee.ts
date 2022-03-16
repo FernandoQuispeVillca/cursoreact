@@ -1,8 +1,9 @@
 export default interface Employee{
     id?: string;
-    firstname?: string;
-    lastname?: string;
-    email?: string;
-    phone?: string;
-    address?: string;
+    typeproduct?: string;
+    number?: string;
+    money?: string;
+    amount?: string;
+    date_of_creation?: string;
+    sucursal?: string;
 }

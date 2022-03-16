@@ -29,17 +29,17 @@ const appPages: AppPage[] = [
     mdIcon: people
   },
   {
-    title: 'Empleados',
+    title: 'Productos',
     url: '/page/employees',
     iosIcon: peopleOutline,
     mdIcon: people
   },
-  {
-    title: 'Proveedores',
-    url: '/page/vendors',
-    iosIcon: peopleOutline,
-    mdIcon: people
-  }
+  // {
+  //   title: 'Proveedores',
+  //   url: '/page/vendors',
+  //   iosIcon: peopleOutline,
+  //   mdIcon: people
+  // }
 ];
 
 const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

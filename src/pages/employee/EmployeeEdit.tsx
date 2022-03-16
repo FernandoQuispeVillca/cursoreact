@@ -52,48 +52,53 @@ const EmployeeEdit: React.FC = () => {
                 </IonHeader>
 
                 <IonCard>
-                    <IonTitle>{id === 'new' ? 'Agregar Empleado' : 'Editar Empleado'}</IonTitle>
+                    <IonTitle>{id === 'new' ? 'Agregar Producto' : 'Editar Producto'}</IonTitle>
                         <IonRow>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Nombre:</IonLabel>
-                                    <IonInput  onIonChange = {e => employee.firstname = String(e.detail.value)}
-                                    value={employee.firstname}></IonInput>
+                                    <IonLabel position="stacked">Tipo de producto:</IonLabel>
+                                    <IonInput  onIonChange = {e => employee.typeproduct = String(e.detail.value)}
+                                    value={employee.typeproduct}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Apellido:</IonLabel>
-                                    <IonInput onIonChange = {e => employee.lastname = String(e.detail.value)} 
-                                    value={employee.lastname}></IonInput>
+                                    <IonLabel position="stacked">Número de cuenta:</IonLabel>
+                                    <IonInput onIonChange = {e => employee.number = String(e.detail.value)} 
+                                    value={employee.number}></IonInput>
                                 </IonItem>
                             </IonCol>
                         </IonRow>
                         <IonRow>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Email:</IonLabel>
-                                    <IonInput onIonChange = {e => employee.email = String(e.detail.value)}
-                                     value={employee.email}></IonInput>
+                                    <IonLabel position="stacked">Moneda(BS/Sus):</IonLabel>
+                                    <IonInput onIonChange = {e => employee.money = String(e.detail.value)}
+                                     value={employee.money}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Dirección:</IonLabel>
-                                    <IonInput onIonChange = {e => employee.address = String(e.detail.value)}
-                                     value={employee.address}></IonInput>
+                                    <IonLabel position="stacked">Monto:</IonLabel>
+                                    <IonInput onIonChange = {e => employee.amount = String(e.detail.value)}
+                                     value={employee.amount}></IonInput>
                                 </IonItem>
                             </IonCol>
                         </IonRow>
                         <IonRow>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Teléfono:</IonLabel>
-                                    <IonInput onIonChange = {e => employee.phone = String(e.detail.value)} 
-                                    value={employee.phone}></IonInput>
+                                    <IonLabel position="stacked">Fecha de creación:</IonLabel>
+                                    <IonInput onIonChange = {e => employee.date_of_creation = String(e.detail.value)} 
+                                    value={employee.date_of_creation}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
+                                <IonItem>
+                                    <IonLabel position="stacked">Sucursal:</IonLabel>
+                                    <IonInput onIonChange = {e => employee.sucursal = String(e.detail.value)} 
+                                    value={employee.sucursal}></IonInput>
+                                </IonItem>
                             </IonCol>
                         </IonRow>
                     <IonItem>

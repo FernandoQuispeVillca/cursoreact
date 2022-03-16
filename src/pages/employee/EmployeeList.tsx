@@ -54,35 +54,39 @@ const EmployeeList: React.FC = () => {
         </IonHeader>
 
         <IonCard>
-          <IonTitle>Gestión de Empleados</IonTitle>
+          <IonTitle>Gestión de Productos</IonTitle>
           <IonItem>
             <IonButton onClick={addEmployee} color="primary" fill="solid" slot="end" size="default">
               <IonIcon icon={add} />
-              Agregar Empleado
+              Agregar Producto
             </IonButton>
           </IonItem>
           <IonGrid className="table">
             <IonRow>
-              <IonCol>Nombre</IonCol>
-              <IonCol>Email</IonCol>
-              <IonCol>Teléfono</IonCol>
-              <IonCol>Dirección</IonCol>
+              <IonCol>Tipo de Producto</IonCol>
+              <IonCol>Número de cuenta</IonCol>
+              <IonCol>Moneda</IonCol>
+              <IonCol>Monto</IonCol>
+              <IonCol>Fecha de creación</IonCol>
+              <IonCol>Sucursal</IonCol>
               <IonCol>Acciones</IonCol>
             </IonRow>
-            {clientes.map( (cliente: Employee) => 
+            {clientes.map( (product: Employee) => 
             <IonRow>
-            <IonCol>{cliente.firstname}  {cliente.lastname}</IonCol>
-            <IonCol>{cliente.email}</IonCol>
-            <IonCol>{cliente.phone}</IonCol>
-            <IonCol>{cliente.address}</IonCol>   
+            <IonCol>{product.typeproduct}</IonCol>
+            <IonCol>{product.number}</IonCol>
+            <IonCol>{product.money}</IonCol>
+            <IonCol>{product.amount}</IonCol>
+            <IonCol>{product.date_of_creation}</IonCol>   
+            <IonCol>{product.sucursal}</IonCol>  
             <IonCol>
               <IonButton color="primary" fill="clear"
-                  onClick= {() => editEmployee(String(cliente.id)) }>
+                  onClick= {() => editEmployee(String(product.id)) }>
                  <IonIcon icon={pencil} slot={"icon-only"}/>
               </IonButton>
 
               <IonButton color="danger" fill="clear"
-                 onClick= {() => remove(String(cliente.id))}>
+                 onClick= {() => remove(String(product.id))}>
                  <IonIcon icon={close} slot={"icon-only"}/>
               </IonButton>
             </IonCol>

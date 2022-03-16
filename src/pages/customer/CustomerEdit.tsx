@@ -56,14 +56,14 @@ const CustomerEdit: React.FC = () => {
                         <IonRow>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Nombre:</IonLabel>
+                                    <IonLabel position="stacked">Nombres:</IonLabel>
                                     <IonInput  onIonChange = {e => customer.firstname = String(e.detail.value)}
                                     value={customer.firstname}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Apellido:</IonLabel>
+                                    <IonLabel position="stacked">Apellidos:</IonLabel>
                                     <IonInput onIonChange = {e => customer.lastname = String(e.detail.value)} 
                                     value={customer.lastname}></IonInput>
                                 </IonItem>
@@ -72,25 +72,36 @@ const CustomerEdit: React.FC = () => {
                         <IonRow>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Email:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.email = String(e.detail.value)}
-                                     value={customer.email}></IonInput>
+                                    <IonLabel position="stacked">Tipo de documento:</IonLabel>
+                                    <IonInput onIonChange = {e => customer.typedocument = String(e.detail.value)}
+                                     value={customer.typedocument}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Dirección:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.address = String(e.detail.value)}
-                                     value={customer.address}></IonInput>
+                                    <IonLabel position="stacked">Numero de documento:</IonLabel>
+                                    <IonInput onIonChange = {e => customer.numberdocument = String(e.detail.value)}
+                                     value={customer.numberdocument}></IonInput>
                                 </IonItem>
                             </IonCol>
                         </IonRow>
                         <IonRow>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="stacked">Teléfono:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.phone = String(e.detail.value)} 
-                                    value={customer.phone}></IonInput>
+                                    <IonLabel position="stacked">Fecha de nacimiento:</IonLabel>
+                                    <IonInput onIonChange = {e => customer.birthday = String(e.detail.value)} 
+                                    value={customer.birthday}></IonInput>
+                                </IonItem>
+                            </IonCol>
+                            <IonCol>
+                            </IonCol>
+                        </IonRow>
+                        <IonRow>
+                            <IonCol>
+                                <IonItem>
+                                    <IonLabel position="stacked">Genero:</IonLabel>
+                                    <IonInput onIonChange = {e => customer.gender = String(e.detail.value)} 
+                                    value={customer.gender}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>

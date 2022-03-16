@@ -64,17 +64,21 @@ const CustomerList: React.FC = () => {
           <IonGrid className="table">
             <IonRow>
               <IonCol>Nombre</IonCol>
-              <IonCol>Email</IonCol>
-              <IonCol>Teléfono</IonCol>
-              <IonCol>Dirección</IonCol>
+              <IonCol>Apellido</IonCol>
+              <IonCol>Tipo de documento</IonCol>
+              <IonCol>documento de identidad</IonCol>
+              <IonCol>Fecha de nacimiento</IonCol>
+              <IonCol>Genero</IonCol>
               <IonCol>Acciones</IonCol>
             </IonRow>
             {clientes.map( (cliente: Customer) => 
             <IonRow>
             <IonCol>{cliente.firstname}  {cliente.lastname}</IonCol>
-            <IonCol>{cliente.email}</IonCol>
-            <IonCol>{cliente.phone}</IonCol>
-            <IonCol>{cliente.address}</IonCol>   
+            <IonCol>{cliente.lastname}</IonCol>
+            <IonCol>{cliente.typedocument}</IonCol>
+            <IonCol>{cliente.numberdocument}</IonCol>   
+            <IonCol>{cliente.birthday}</IonCol>  
+            <IonCol>{cliente.gender}</IonCol> 
             <IonCol>
               <IonButton color="primary" fill="clear"
                   onClick= {() => editCustomer(String(cliente.id)) }>

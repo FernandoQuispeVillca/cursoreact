@@ -1,2 +1,5 @@
 iniciar server front end
 npm run start
+
+iniciar spring 
+./mvnw spring-boot:run

@@ -57,8 +57,8 @@ const EmployeeEdit: React.FC = () => {
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Tipo de producto:</IonLabel>
-                                    <IonInput  onIonChange = {e => employee.typeproduct = String(e.detail.value)}
-                                    value={employee.typeproduct}></IonInput>
+                                    <IonInput  onIonChange = {e => employee.typeProduct = String(e.detail.value)}
+                                    value={employee.typeProduct}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
@@ -89,8 +89,8 @@ const EmployeeEdit: React.FC = () => {
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Fecha de creación:</IonLabel>
-                                    <IonInput onIonChange = {e => employee.date_of_creation = String(e.detail.value)} 
-                                    value={employee.date_of_creation}></IonInput>
+                                    <IonInput onIonChange = {e => employee.dateOfCreation = String(e.detail.value)} 
+                                    value={employee.dateOfCreation}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>

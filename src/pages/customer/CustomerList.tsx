@@ -73,11 +73,11 @@ const CustomerList: React.FC = () => {
             </IonRow>
             {clientes.map( (cliente: Customer) => 
             <IonRow>
-            <IonCol>{cliente.firstname}  {cliente.lastname}</IonCol>
-            <IonCol>{cliente.lastname}</IonCol>
-            <IonCol>{cliente.typedocument}</IonCol>
-            <IonCol>{cliente.numberdocument}</IonCol>   
-            <IonCol>{cliente.birthday}</IonCol>  
+            <IonCol>{cliente.firstName} </IonCol>
+            <IonCol>{cliente.lastName}</IonCol>
+            <IonCol>{cliente.typeDocument}</IonCol>
+            <IonCol>{cliente.numberDocument}</IonCol>   
+            <IonCol>{cliente.birthDate}</IonCol>  
             <IonCol>{cliente.gender}</IonCol> 
             <IonCol>
               <IonButton color="primary" fill="clear"

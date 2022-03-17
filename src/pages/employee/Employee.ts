@@ -1,9 +1,9 @@
 export default interface Employee{
     id?: string;
-    typeproduct?: string;
+    typeProduct?: string;
     number?: string;
     money?: string;
     amount?: string;
-    date_of_creation?: string;
+    dateOfCreation?: string;
     sucursal?: string;
 }

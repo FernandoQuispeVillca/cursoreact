@@ -57,15 +57,15 @@ const CustomerEdit: React.FC = () => {
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Nombres:</IonLabel>
-                                    <IonInput  onIonChange = {e => customer.firstname = String(e.detail.value)}
-                                    value={customer.firstname}></IonInput>
+                                    <IonInput  onIonChange = {e => customer.firstName = String(e.detail.value)}
+                                    value={customer.firstName}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Apellidos:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.lastname = String(e.detail.value)} 
-                                    value={customer.lastname}></IonInput>
+                                    <IonInput onIonChange = {e => customer.lastName = String(e.detail.value)} 
+                                    value={customer.lastName}></IonInput>
                                 </IonItem>
                             </IonCol>
                         </IonRow>
@@ -73,15 +73,15 @@ const CustomerEdit: React.FC = () => {
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Tipo de documento:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.typedocument = String(e.detail.value)}
-                                     value={customer.typedocument}></IonInput>
+                                    <IonInput onIonChange = {e => customer.typeDocument = String(e.detail.value)}
+                                     value={customer.typeDocument}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Numero de documento:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.numberdocument = String(e.detail.value)}
-                                     value={customer.numberdocument}></IonInput>
+                                    <IonInput onIonChange = {e => customer.numberDocument = String(e.detail.value)}
+                                     value={customer.numberDocument}></IonInput>
                                 </IonItem>
                             </IonCol>
                         </IonRow>
@@ -89,8 +89,8 @@ const CustomerEdit: React.FC = () => {
                             <IonCol>
                                 <IonItem>
                                     <IonLabel position="stacked">Fecha de nacimiento:</IonLabel>
-                                    <IonInput onIonChange = {e => customer.birthday = String(e.detail.value)} 
-                                    value={customer.birthday}></IonInput>
+                                    <IonInput onIonChange = {e => customer.birthDate = String(e.detail.value)} 
+                                    value={customer.birthDate}></IonInput>
                                 </IonItem>
                             </IonCol>
                             <IonCol>

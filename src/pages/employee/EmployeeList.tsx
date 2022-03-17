@@ -73,11 +73,11 @@ const EmployeeList: React.FC = () => {
             </IonRow>
             {clientes.map( (product: Employee) => 
             <IonRow>
-            <IonCol>{product.typeproduct}</IonCol>
+            <IonCol>{product.typeProduct}</IonCol>
             <IonCol>{product.number}</IonCol>
             <IonCol>{product.money}</IonCol>
             <IonCol>{product.amount}</IonCol>
-            <IonCol>{product.date_of_creation}</IonCol>   
+            <IonCol>{product.dateOfCreation}</IonCol>   
             <IonCol>{product.sucursal}</IonCol>  
             <IonCol>
               <IonButton color="primary" fill="clear"

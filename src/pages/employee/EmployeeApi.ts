@@ -1,36 +1,46 @@
 import Employee from "./Employee";
 
-export function searchEmployee(){
-    if (!localStorage['employees']){
-        localStorage['employees'] = '[]';
-    }
-    let employees = localStorage['employees'];
-    employees = JSON.parse(employees);
-    return employees; 
+export async function searchEmployee(){
+    let url = process.env.REACT_APP_API+'products'
+    let response = await fetch(url,{
+        "method": 'GET',
+        "headers": {
+          "Content-Type": 'application/json'
+        }
+    })
+    
+    return await response.json();
 }
 
-export function removeEmployee(id: string){
-    let employees = searchEmployee();
-    let indice = employees.findIndex((employee: Employee) => employee.id == id);
-    employees.splice(indice , 1);
-    localStorage['employees'] = JSON.stringify(employees);
+export async function removeEmployee(id: string){
+    let url = process.env.REACT_APP_API+'products/'+id
+    await fetch(url,{
+        "method": 'DELETE',
+        "headers": {
+          "Content-Type": 'application/json'
+        }
+    })
 }
 
-export function saveEmployee(employee: Employee){
-    let employees = searchEmployee();
-    if(employee.id){
-     //editar
-     let indice = employees.findIndex((c: Employee) => c.id == employee.id);
-     employees[indice] = employee;
-    }else{
-     //nuevo
-     employee.id = String(Math.round(Math.random() * 100000));  
-     employees.push(employee);
-    }
-    localStorage['employees'] = JSON.stringify(employees);
+export async function saveEmployee(employee: Employee){
+   let url = process.env.REACT_APP_API+'products'
+    await fetch(url,{
+        "method": 'POST',
+        "body": JSON.stringify(employee),
+        "headers": {
+          "Content-Type": 'application/json'
+        }
+    })
 }
 
-export function searchEmployeeById(id: string){
-    let employees = searchEmployee();
-    return employees.find((employee:any) => employee.id == id);
+export async function searchEmployeeById(id: string){
+    let url = process.env.REACT_APP_API+'products/'+id
+    let response = await fetch(url,{
+        "method": 'GET',
+        "headers": {
+          "Content-Type": 'application/json'
+        }
+    })
+    
+    return await response.json();
 }

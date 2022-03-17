@@ -1,5 +1,8 @@
 iniciar server front end
 npm run start
 
+iniciar server para production
+npm run build
+
 iniciar spring 
 ./mvnw spring-boot:run

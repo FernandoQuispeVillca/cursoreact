@@ -1,7 +1,7 @@
 import { IonButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import { add, checkmark, close, pencil } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router';
+import { useHistory, useParams, useRouteMatch } from 'react-router';
 import ExploreContainer from '../../components/ExploreContainer';
 import Customer from './Customer';
 import { removeCustomer, saveCustomer, searchCustomer, searchCustomerById } from './CustomerApi';
@@ -9,26 +9,32 @@ import { removeCustomer, saveCustomer, searchCustomer, searchCustomerById } from
 
 const CustomerEdit: React.FC = () => {
 
-    const { name, id } = useParams<{ name: string; id: string }>();
-
+    const { name} = useParams<{ name: string; }>();
+   
     const [customer, setCustomer] = useState<Customer>({});
 
     const history = useHistory();
 
+    const routeMatch: any = useRouteMatch("/page/customer/:id");
+
+    const id = routeMatch?.params?.id;
+
 
     useEffect(() => {
         search();
-    }, []);
+    }, [history.location.pathname]);
 
-    const search = () => {
-        if(id !== 'new'){
-            let result = searchCustomerById(id);
+    const search = async () => {
+        if(id === 'new'){
+            setCustomer({});
+        }else{
+            let result = await searchCustomerById(id);
             setCustomer(result);
         }
     }
 
-    const save = () => {
-        saveCustomer(customer);
+    const save = async () => {
+        await saveCustomer(customer);
         history.push('/page/customers');
     }
 

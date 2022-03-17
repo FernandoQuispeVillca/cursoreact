@@ -17,13 +17,13 @@ const CustomerList: React.FC = () => {
      search();
   }, [history.location.pathname]);
 
-  const search = () => {
-     let result = searchCustomer();
+  const search = async () => {
+     let result = await searchCustomer();
      setClientes(result);
   }
 
-  const remove = (id: string) => {
-        removeCustomer(id);
+  const remove = async (id: string) => {
+        await removeCustomer(id);
         search();
   }
 
